@@ -1,0 +1,157 @@
+/* ProductDetails.css */
+.product-details {
+    max-width: 1200px; /* Wide max width for a spacious layout */
+    margin: 20px auto; /* Center the container */
+    padding: 20px; /* Add some padding */
+    display: flex; /* Flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    background-color: #ffffff; /* White background */
+    border: 1px solid #eaeaea; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Left Column: Product Image */
+.product-image {
+    flex: 1; /* Image takes less space than details */
+    padding-right: 20px; /* Add space between image and details */
+}
+
+.product-image img {
+    width: 100%; /* Full width for responsiveness */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Right Column: Product Details */
+.product-details-info {
+    flex: 2; /* Allow more space for product details */
+}
+
+.product-details-info h1 {
+    font-size: 2.5rem; /* Large title */
+    color: #333; /* Darker title color */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.product-details-info p {
+    font-size: 1.1rem; /* Base font size for paragraphs */
+    line-height: 1.6; /* Improve readability */
+    margin: 5px 0; /* Space between paragraphs */
+}
+
+.product-details-info strong {
+    color: #b12704; /* Amazon-like accent color for strong text */
+}
+
+/* Pricing and Discount */
+.price {
+    font-size: 1.5rem; /* Larger font for price */
+    color: #b12704; /* Price color */
+    font-weight: bold; /* Bold font for price */
+}
+
+.discount {
+    text-decoration: line-through; /* Strikethrough for original price */
+    color: #767676; /* Grey color for original price */
+}
+
+/* Tag and Reviews Section */
+.product-details-info h3 {
+    margin-top: 20px; /* Space above headings */
+}
+
+.product-details-info ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove padding */
+}
+
+.product-details-info li {
+    background-color: #f7f7f7; /* Light grey background for list items */
+    border: 1px solid #eaeaea; /* Border around list items */
+    border-radius: 5px; /* Rounded corners for list items */
+    padding: 10px; /* Padding inside list items */
+    margin: 5px 0; /* Space between list items */
+}
+
+/* Add to Cart Button */
+.addToCartBtn {
+    background-color: #ff9900; /* Amazon-like orange button */
+    color: #fff; /* White text */
+    padding: 12px 20px; /* Padding for the button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.2rem; /* Increase font size */
+    margin-top: 15px; /* Space above the button */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.addToCartBtn:hover {
+    background-color: #e68a00; /* Darker shade on hover */
+}
+
+/* Media Queries for Tablet Responsiveness */
+@media (max-width: 768px) {
+    .product-details {
+        flex-direction: column; /* Stack image and details on smaller screens */
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    .product-image {
+        padding-right: 0; /* Remove padding on smaller screens */
+        margin-bottom: 15px; /* Space below image */
+    }
+
+    .product-details-info h1 {
+        font-size: 2rem; /* Smaller title size */
+    }
+
+    .product-details-info p {
+        font-size: 1rem; /* Smaller text for paragraphs */
+    }
+
+    .addToCartBtn {
+        width: 100%; /* Full width button on tablets */
+    }
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 480px) {
+    .product-details {
+        flex-direction: column; /* Stack content vertically */
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    .product-image img {
+        height: auto;
+        width: 100%; /* Full width for mobile */
+    }
+
+    .product-details-info h1 {
+        font-size: 1.8rem; /* Smaller title size for mobile */
+        margin-bottom: 8px; /* Less space below the title */
+    }
+
+    .product-details-info p {
+        font-size: 0.9rem; /* Smaller text for mobile */
+    }
+
+    .price {
+        font-size: 1.4rem; /* Slightly smaller price */
+    }
+
+    .addToCartBtn {
+        width: 100%; /* Full width for mobile */
+        font-size: 1rem; /* Adjust button text size */
+        padding: 10px 15px; /* Adjust button padding */
+    }
+
+    .product-details-info ul {
+        margin: 0; /* Remove default margin for lists */
+    }
+
+    .product-details-info li {
+        padding: 8px; /* Reduce padding for list items */
+    }
+}

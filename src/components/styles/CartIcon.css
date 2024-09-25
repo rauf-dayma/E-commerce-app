@@ -1,0 +1,25 @@
+/* Cart Icon container */
+.cart-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  /* Badge to show the number of items in the cart */
+  .cart-count-badge {
+    position: absolute;
+    top: -17px;
+    right: -20px;
+    background-color: red;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+
+  @media (min-width: 480px) {
+    .cart-count-badge {
+        font-size: 0.6rem;
+    }
+  }

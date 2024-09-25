@@ -1,0 +1,130 @@
+/* Container for product items */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Responsive columns */
+  gap: 50px; /* Increase spacing between items */
+  padding: 90px; /* Add padding around the grid */
+  background-color: #f9f9f9; /* Light background for the container */
+}
+
+/* Individual product item (entirely clickable) */
+.product-item {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.product-item:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Remove link default styles */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit; /* Inherit color from the parent container */
+  height: 100%; /* Make the link cover the entire product */
+}
+
+/* Image inside product item */
+.product-item img {
+  max-width: 100%;
+  height: 200px; /* Uniform height for images */
+  object-fit: cover; /* Keep images proportional */
+  border-radius: 8px;
+}
+
+/* Title and description inside product item */
+.product-item h3 {
+  font-size: 1.2rem;
+  margin: 15px 0;
+  color: #333; /* Regular text color, not blue */
+}
+
+.product-item p {
+  font-size: 0.95rem;
+  color: #777;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+/* Price and Add to Cart button */
+.product-item .price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #007bff;
+}
+
+.product-item .add-to-cart {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-item .add-to-cart:hover {
+  background-color: #218838;
+}
+
+
+
+/* Adjustments for better visual space */
+@media (max-width: 768px) {
+  .product-item img {
+    height: 240px; /* Adjust image size for smaller screens */
+    width: 240px;
+    align-self: center;
+  }
+
+  .product-list {
+    padding: 30px;
+  }
+
+  .product-item h3 {
+    font-size: 1rem;
+  }
+
+  .product-item p {
+    font-size: 0.9rem;
+  }
+  
+}
+
+@media (max-width: 480px) {
+    .product-item img {
+      height: 200px; /* Adjust image size for smaller screens */
+      width: 200px;
+      align-self: center;
+    }
+  
+    .product-list {
+      padding: 20px;
+    }
+  
+    .product-item h3 {
+      font-size: 1rem;
+    }
+  
+    .product-item p {
+      font-size: 0.9rem;
+    }
+  }
+  
