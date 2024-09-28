@@ -5,6 +5,7 @@ import appStore from "./utils/appStore.js";
 import { Provider } from "react-redux";
 import { ToastContainer } from "react-toastify"; // Import ToastContainer
 import "./App.css"
+import Footer from "./components/Footer.jsx";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState(''); // State to hold the search term
@@ -15,7 +16,7 @@ function App() {
         {/* Pass the setSearchTerm function to the Header */}
         <Header setSearchTerm={setSearchTerm} />
         <Outlet context={{ searchTerm }} /> {/* Use Outlet if needed */}
-
+        <Footer />
         <ToastContainer />
       </Provider>
     </>

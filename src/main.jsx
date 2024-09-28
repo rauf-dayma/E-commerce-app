@@ -10,7 +10,7 @@ import Home from './components/Home.jsx'
 
 
 const NotFound = lazy(()=> import("./components/NotFound.jsx"))
-const Checkout = lazy(()=> import("./components/CheckoutCheckout.jsx"))
+const Checkout = lazy(()=> import("./components/Checkout.jsx"))
 const Cart = lazy(()=> import("./components/Cart.jsx"))
 const ProductItem = lazy(()=> import("./components/ProductItem.jsx"))
 const ProductDetail = lazy(()=> import("./components/ProductDetail.jsx"))
