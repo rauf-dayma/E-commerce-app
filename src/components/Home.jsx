@@ -12,11 +12,28 @@ function Home() {
 
   // Function to fetch products data from API
   async function fetchProductsFromAPI() {
-    const response = await fetch('https://dummyjson.com/products');
-    const productData = await response.json();
-    console.log("Fetched Products Data:", productData); // Debugging: Check if data is correct
+    const token = localStorage.getItem('token'); // Retrieve JWT token from local storage
 
-    setAllProducts(productData.products); // Store the complete product list
+    try {
+      const response = await fetch('http://localhost:3000/api/products', {
+        method: 'GET',
+        headers: {
+          Authorization: `Bearer ${token}`, // Add Bearer token to request
+        },
+      });
+  
+      if (response.ok) {
+        const products = await response.json();
+        console.log('Products:', products);
+        setAllProducts(products); // Store the complete product list
+
+      } else {
+        const error = await response.json();
+        console.error('Error fetching products:', error.message);
+      }
+    } catch (error) {
+      console.error('Failed to fetch products:', error);
+    }
   }
 
   return (

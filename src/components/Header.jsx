@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import CartIcon from './CartIcon';
-import './styles/Header.css'; // Assuming you have some CSS for styling
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import CartIcon from "./CartIcon";
+import "./styles/Header.css"; // Assuming you have some CSS for styling
 
 const Header = ({ setSearchTerm }) => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
 
   const handleSearchChange = (e) => {
     const value = e.target.value;
@@ -19,7 +17,7 @@ const Header = ({ setSearchTerm }) => {
   return (
     <header className="header">
       <div className="nav-container">
-        <Link to="/" className="nav-logo">
+        <Link to="/home" className="nav-logo">
           <h1>MyStore</h1>
         </Link>
 
@@ -33,8 +31,8 @@ const Header = ({ setSearchTerm }) => {
           <button type="submit">Search</button>
         </div>
 
-        <Link to="/cart" >
-            <CartIcon/>
+        <Link to="/cart">
+          <CartIcon />
         </Link>
       </div>
     </header>

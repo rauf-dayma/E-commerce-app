@@ -1,0 +1,110 @@
+/* Signup form container */
+.container {
+    max-width: 450px;
+    width: 100%;
+    padding: 40px;
+    background-color: #8A2BE2; /* Violet background */
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: white;
+    margin: 50px auto;
+  }
+  
+  /* Heading for the signup form */
+  .signUpForm h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 1px;
+  }
+  
+  /* Form styling */
+  .signUpForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Label styling */
+  .lable {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+  }
+  
+  /* Input fields */
+  .input-field {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  /* Placeholder styling */
+  .input-field::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Input focus effect */
+  .input-field:focus {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 5px rgba(138, 43, 226, 0.4);
+  }
+  
+  /* Button styling */
+  .signUpForm button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6A0572;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  /* Button hover effect */
+  .signUpForm button:hover {
+    background-color: #5B0464;
+    box-shadow: 0px 4px 15px rgba(106, 5, 114, 0.4);
+  }
+  
+  /* Link and span styling */
+  .signUpForm span {
+    margin-top: 15px;
+    display: block;
+    font-size: 14px;
+    color: #ddd;
+  }
+  
+  .signUpForm span a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .signUpForm span a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+      max-width: 100%;
+    }
+  }
+  

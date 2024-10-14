@@ -16,26 +16,64 @@ function ProductDetails() {
   const cartItems = useSelector((state) => state.cart.items);
 
   const handleAddToCart = () => {
-    const itemExists = cartItems.find((item) => item.id === product.id);
-
+    // Check if the product exists in the cart
+    const itemExists = cartItems.find((item) => item.productId._id === product._id); // Correct comparison
+  
     if (itemExists) {
       toast.error("This item is already in the cart.", {
-        position: "top-right", 
+        position: "top-right",
       });
     } else {
-      dispatch(addItem(product));
-      toast.success("Item added to cart!", {
-        position: "top-right", 
-      });
+      // Make a POST request to add the product to the cart
+      fetch(`http://localhost:3000/api/cart/add`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`, // Include user token for authentication
+        },
+        body: JSON.stringify({
+          productId: product._id, // Dynamically pass the product ID
+          quantity: 1, // Default quantity, you can change this as needed
+        }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Failed to add item to cart");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Dispatch an action to update the cart in the Redux store
+          dispatch(
+            addItem({
+              productId: product, // Pass the whole product object
+              quantity: 1, // Set default quantity
+            })
+          );
+          toast.success("Item added to cart!");
+        })
+        .catch((error) => {
+          console.error("Error adding to cart:", error);
+          toast.error("Failed to add item to cart");
+        });
     }
   };
-
+  
+  
   useEffect(() => {
-    // Replace with your actual API call for fetching individual product details by ID
-    fetch(`https://dummyjson.com/products/${id}`)
-      .then((response) => response.json())
-      .then((data) => setProduct(data));
-  }, [id]);
+    
+    fetch(`http://localhost:3000/api/products/${id}`)  
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch product details");
+      }
+      return response.json();
+    })
+    .then((data) => setProduct(data))
+    .catch((error) => {
+      console.error("Error fetching product details:", error);
+    });
+}, [id]);
 
   if (!product) return <div>Loading...</div>;
 
