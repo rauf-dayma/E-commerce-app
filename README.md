@@ -51,7 +51,7 @@ This E-commerce web application is built with modern technologies and provides a
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-repo/e-commerce-app.git
+    git clone https://github.com/rauf-dayma/E-commerce-app.git
     ```
 2. Navigate to the backend directory:
     ```bash
