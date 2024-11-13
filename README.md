@@ -1,3 +1,42 @@
+# E-commerce Web App
+
+## Overview  
+This E-commerce web application is built with modern technologies and provides a complete shopping experience. It includes essential features such as product listing, cart functionality, user authentication, and secure checkout. The application ensures a seamless experience with state management using **Redux**, while the backend API efficiently manages products, users, and orders.
+
+---
+
+## Features
+- **User Authentication**: Secure login and signup using JWT (JSON Web Tokens).
+- **Product Listing**: Displays a variety of products fetched dynamically from the database.
+- **Cart Management**: Add, update, or remove items from the cart with quantities reflected in real-time.
+- **Responsive Design**: Optimized for all devices, from desktops to mobile phones.
+- **Checkout Process**: Integrated UPI payment for seamless transactions.
+- **Profile Management**: Users can manage their account details, view order history, and update their profile.
+- **Admin Panel**: Allows admins to add, edit, or remove products and manage user orders.
+
+---
+
+## Tech Stack
+
+### Frontend
+- **React**: For building dynamic UI components.
+- **Redux**: State management to handle cart and user data.
+- **HTML5, CSS3**: Responsive design and styling.
+- **JavaScript (ES6)**: Logic implementation and DOM manipulation.
+- **React Router**: For navigation across pages.
+- **Fetch API**: For making API requests to the backend.
+
+### Backend
+- **Node.js**: Backend environment.
+- **Express.js**: Web framework for creating RESTful APIs.
+- **MongoDB**: NoSQL database for storing products, users, and orders.
+- **Mongoose**: ODM (Object Data Modeling) library for MongoDB.
+- **JWT (JSON Web Tokens)**: For user authentication and authorization.
+
+---
+
+## Project Structure
+
 
 ---
 
