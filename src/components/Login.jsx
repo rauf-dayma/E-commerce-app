@@ -6,8 +6,6 @@ import "./styles/Login.css";
 import { useDispatch } from "react-redux";
 
 function Login() {
-
-    
   const [loginInfo, setLoginInfo] = useState({
     email: "",
     password: "",
@@ -23,10 +21,9 @@ function Login() {
         position: "top-right",
       });
       return;
-      
     }
 
-    console.log("Attempting to login with:", email, password); 
+    console.log("Attempting to login with:", email, password);
     try {
       const url = "http://localhost:3000/api/login";
       const response = await fetch(url, {
@@ -98,9 +95,14 @@ function Login() {
             value={loginInfo.password}
           />
         </div>
-        <button type="submit" className="login-button">Login</button>
+        <button type="submit" className="login-button">
+          Login
+        </button>
         <span className="login-span">
-          Don't have an account? <Link to="/signup" className="login-link">Signup</Link>
+          Don't have an account?{" "}
+          <Link to="/signup" className="login-link">
+            Signup
+          </Link>
         </span>
       </form>
       <ToastContainer />

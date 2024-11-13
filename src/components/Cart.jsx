@@ -35,7 +35,7 @@ function Cart() {
   // Function to update quantity in the cart on the server
   const updateQuantity = (item, quantity) => {
     console.log(item._id)
-    console.log(item.productId._id)
+    console.log(item.productId._id )
     fetch(`http://localhost:3000/api/cart/update/${item._id}`, {
       method: "PUT",
       headers: {

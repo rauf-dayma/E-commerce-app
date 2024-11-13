@@ -2,7 +2,7 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "../Model/user.model.js"; // Assuming user model exists
 
-const JWT_SECRET = "secret_key"; 
+const JWT_SECRET = "secret_key";
 
 // Login function
 export const login = async (req, res) => {
@@ -43,7 +43,7 @@ export const signup = async (req, res) => {
     // Hash the password before saving
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const newUser = new User({ name, email, password});
+    const newUser = new User({ name, email, password });
     await newUser.save();
 
     res.status(201).json({ message: "User registered successfully" });
@@ -58,7 +58,9 @@ export const verifyToken = async (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1]; // Extract token from Authorization header
 
   if (!token) {
-    return res.status(401).json({ message: "Access denied. No token provided." });
+    return res
+      .status(401)
+      .json({ message: "Access denied. No token provided." });
   }
 
   try {
@@ -76,4 +78,3 @@ export const verifyToken = async (req, res, next) => {
     return res.status(400).json({ message: "Invalid token." });
   }
 };
-

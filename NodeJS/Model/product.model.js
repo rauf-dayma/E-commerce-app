@@ -1,10 +1,10 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 // Define the schema for nested objects like dimensions, reviews, and meta
 const dimensionsSchema = new mongoose.Schema({
   width: Number,
   height: Number,
-  depth: Number
+  depth: Number,
 });
 
 const reviewSchema = new mongoose.Schema({
@@ -12,14 +12,14 @@ const reviewSchema = new mongoose.Schema({
   comment: String,
   date: Date,
   reviewerName: String,
-  reviewerEmail: String
+  reviewerEmail: String,
 });
 
 const metaSchema = new mongoose.Schema({
   createdAt: Date,
   updatedAt: Date,
   barcode: String,
-  qrCode: String
+  qrCode: String,
 });
 
 // Main product schema
@@ -45,10 +45,10 @@ const productSchema = new mongoose.Schema({
   minimumOrderQuantity: Number,
   meta: metaSchema, // Meta information
   images: [String], // Array of image URLs
-  thumbnail: String
+  thumbnail: String,
 });
 
 // Create a model from the schema
-const Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model("Product", productSchema);
 
 export default Product;

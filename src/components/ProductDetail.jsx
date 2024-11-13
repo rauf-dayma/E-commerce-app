@@ -17,8 +17,10 @@ function ProductDetails() {
 
   const handleAddToCart = () => {
     // Check if the product exists in the cart
-    const itemExists = cartItems.find((item) => item.productId._id === product._id); // Correct comparison
-  
+    const itemExists = cartItems.find(
+      (item) => item.productId._id === product._id
+    ); // Correct comparison
+
     if (itemExists) {
       toast.error("This item is already in the cart.", {
         position: "top-right",
@@ -58,22 +60,20 @@ function ProductDetails() {
         });
     }
   };
-  
-  
+
   useEffect(() => {
-    
-    fetch(`http://localhost:3000/api/products/${id}`)  
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Failed to fetch product details");
-      }
-      return response.json();
-    })
-    .then((data) => setProduct(data))
-    .catch((error) => {
-      console.error("Error fetching product details:", error);
-    });
-}, [id]);
+    fetch(`http://localhost:3000/api/products/${id}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch product details");
+        }
+        return response.json();
+      })
+      .then((data) => setProduct(data))
+      .catch((error) => {
+        console.error("Error fetching product details:", error);
+      });
+  }, [id]);
 
   if (!product) return <div>Loading...</div>;
 

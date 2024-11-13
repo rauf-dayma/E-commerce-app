@@ -1,9 +1,13 @@
-import { StrictMode, lazy, Suspense } from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App.jsx';
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
-import './index.css';
-import Home from './components/Home.jsx';
+import { StrictMode, lazy, Suspense } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
+import "./index.css";
+import Home from "./components/Home.jsx";
 
 // lazy Loading
 const NotFound = lazy(() => import("./components/NotFound.jsx"));
@@ -71,8 +75,8 @@ const appRouting = createBrowserRouter([
   },
 ]);
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={appRouting} />
-  </StrictMode>,
+  </StrictMode>
 );
